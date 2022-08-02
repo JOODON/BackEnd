@@ -1,18 +1,25 @@
 package Role;
 
 public class Role {
-    private Integer roleID;
+    private Integer roleId;
     private String description;
 
-    public Role(int id, String des) {
+    public Role() {
+
     }
 
-    public Integer getRoleID() {
-        return roleID;
+    public Role(Integer roleId, String description) {
+        super();
+        this.roleId = roleId;
+        this.description = description;
     }
 
-    public void setRoleID(Integer roleID) {
-        this.roleID = roleID;
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public String getDescription() {
@@ -22,11 +29,9 @@ public class Role {
     public void setDescription(String description) {
         this.description = description;
     }
+
     @Override
     public String toString() {
-        return "role{" +
-                "roleID=" + roleID +
-                ", description='" + description + '\'' +
-                '}';
+        return "Role [roleId=" + roleId + ", description=" + description + "]";
     }
 }
