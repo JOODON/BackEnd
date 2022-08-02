@@ -5,8 +5,8 @@ import Role.Roledao;
 
 public class Examjam2 {
     public static void main(String[] args) {
-        int roleID=500;
-        String description="CTO";
+        int roleID=3;
+        String description="ROle Three";
 
         Role role = new Role(roleID,description);
 
