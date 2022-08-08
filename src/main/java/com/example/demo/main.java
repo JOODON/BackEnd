@@ -18,11 +18,11 @@ public class main {
         int number = in.nextInt();
 
         if(number == 1){
-            System.out.println("이름을 입력하세요 :");
+            System.out.print("이름을 입력하세요 :");
             String name=in.next();
-            System.out.println("전화번호를 입력하세요 :");
+            System.out.print("전화번호를 입력하세요 :");
             String phonenumber=in.next();
-            System.out.println("회사 이름을 입력하세요 :");
+            System.out.print("회사 이름을 입력하세요 :");
             String companyname=in.next();
 
             Role1 role1=new Role1(name,phonenumber,companyname);
@@ -31,8 +31,13 @@ public class main {
 
             int i=dao.addpost(role1);
 
-            System.out.println(i);
-
+            System.out.println("추가로 등록 되셨습니다");
+        } else if (number==2) {
+            System.out.print("검색할 이름을 입력하세요 :  ");
+            String Sname=in.next();
+            Roledao1 dao=new Roledao1();
+            String role1=dao.getpost(Sname);
+            System.out.println(role1);
         }
     }
 }

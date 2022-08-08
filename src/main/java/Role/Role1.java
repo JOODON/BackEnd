@@ -35,4 +35,14 @@ public class Role1 {
     public void setCompanyname(String companyname) {
         this.companyname = companyname;
     }
+
+    @Override
+    public String toString() {
+        return "Role1{" +
+                "name='" + name + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
+                ", companyname='" + companyname + '\'' +
+                '}';
+    }
+
 }

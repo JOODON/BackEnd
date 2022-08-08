@@ -1,8 +1,6 @@
 package Role;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 public class Roledao1 {
     public static String dburl="jdbc:mysql://localhost:3307/post";
@@ -23,7 +21,7 @@ public class Roledao1 {
             ps.setString(2,role1.getPhonenumber());
             ps.setString(3,role1.getCompanyname());
 
-            i = ps.executeUpdate();
+            i = ps.executeUpdate();//없데이를 실행
         }catch (Exception e){
             e.printStackTrace();
         }finally{
@@ -43,5 +41,52 @@ public class Roledao1 {
             }
         }
         return i;
+    }
+    public String getpost(String postname){
+        Role1 role1=null;
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn= DriverManager.getConnection(dburl,dbuser,dbpassward);
+            String sql = "SELECT name,phonenumber,companyname FROM post WHERE name = ? ";
+            ps=conn.prepareStatement(sql);
+            ps.setString(1,postname);
+            rs= ps.executeQuery();
+            if(rs.next()){
+                String name=rs.getString(1);
+                String phonenumber=rs.getString(2);
+                String companyname=rs.getString(3);
+                role1=new Role1(name,phonenumber,companyname);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return postname;
     }
 }
