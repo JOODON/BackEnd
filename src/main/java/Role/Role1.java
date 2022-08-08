@@ -5,6 +5,13 @@ public class Role1 {
     private String phonenumber;
     private String companyname;
 
+    public Role1(String name, String phonenumber, String companyname) {
+        super();
+        this.name=name;
+        this.phonenumber=phonenumber;
+        this.companyname=companyname;
+    }
+
     public String getName() {
         return name;
     }
