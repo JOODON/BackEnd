@@ -36,7 +36,7 @@ public class main {
             System.out.print("검색할 이름을 입력하세요 :  ");
             String Sname=in.next();
             Roledao1 dao=new Roledao1();
-            String role1=dao.getpost(Sname);
+            String role1= String.valueOf(dao.getpost(Sname));
             System.out.println(role1);
         }
     }

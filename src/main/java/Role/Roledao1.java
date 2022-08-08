@@ -42,7 +42,7 @@ public class Roledao1 {
         }
         return i;
     }
-    public String getpost(String postname){
+    public Role1 getpost(String postname){
         Role1 role1=null;
         Connection conn=null;
         PreparedStatement ps=null;
@@ -87,6 +87,6 @@ public class Roledao1 {
                 }
             }
         }
-        return postname;
+        return role1;
     }
 }
