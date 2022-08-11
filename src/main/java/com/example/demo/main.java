@@ -16,7 +16,7 @@ public class main {
         System.out.println("--------------------");
         System.out.print("메뉴를 입력하세요 :  ");
         int number = in.nextInt();
-
+        while (true){
         if(number == 1){
             System.out.print("이름을 입력하세요 :");
             String name=in.next();
@@ -38,6 +38,14 @@ public class main {
             Roledao1 dao=new Roledao1();
             String role1= String.valueOf(dao.getpost(Sname));
             System.out.println(role1);
+        }
+        if (number==3){
+            System.out.println("종료 되셨습니다");
+            break;
+        }
+        else {
+            System.out.println("잘못된 입력입니다");
+        }
         }
     }
 }
